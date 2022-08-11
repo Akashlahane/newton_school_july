@@ -1,4 +1,4 @@
-package arrays;
+package arrays.twopointers;
 
 public class TwoPointersTargetSum {
 
@@ -66,6 +66,30 @@ public class TwoPointersTargetSum {
             return arr[high];
         else
             return arr[high] - arr[low-1];
+    }
+
+
+    //
+    static boolean twoPointerApproach(int[] arr, int targetSum){
+        int ptr1=0, ptr2=0;
+        int curSum = 0;
+
+        while(ptr1<=ptr2 && ptr2< arr.length){
+
+
+            if(curSum==targetSum)
+                return true;
+            else if(curSum > targetSum){
+                curSum -= arr[ptr1];
+                ptr1++;
+            }
+            else{
+                ptr2++;
+                if(ptr2 < arr.length)
+                    curSum += arr[ptr2];
+            }
+        }
+        return false;
     }
 
 
