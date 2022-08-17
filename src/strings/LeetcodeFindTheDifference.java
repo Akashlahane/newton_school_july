@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.Arrays;
+
 public class LeetcodeFindTheDifference {
 
     // https://leetcode.com/problems/find-the-difference/
