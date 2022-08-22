@@ -1,6 +1,7 @@
 package arrays.twopointers;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class TwoSum {
 
@@ -98,6 +99,32 @@ public class TwoSum {
             else{
                 ptr1++;
             }
+        }
+        return false;
+    }
+
+    /**
+     *
+     * 5, 12, 21, 1 , 6
+     * targetSum = 26
+     *
+     * a+b = targetSum
+     * I already know a, arr[i]
+     * b = targetSum- a ( Search for b)
+     *
+     *  5, 12
+     *
+     * time complexity:  O(n*1*1) = O(n) time
+     * Space complexity: O(n) space
+     */
+    static boolean twoSumHashSet(int[] arr, int targetSum){
+        HashSet<Integer> hs = new HashSet<>(); // O(n) space
+
+        for(int i=0; i<arr.length;i++){ // O(n)
+            int b = targetSum - arr[i];
+            if(hs.contains(b)) // O(1)
+                return true;
+            hs.add(arr[i]); // O(1)
         }
         return false;
     }
