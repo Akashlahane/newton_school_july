@@ -1,5 +1,7 @@
 package hashing;
 
+import java.util.HashSet;
+
 public class LeetcodeHappyNumbers {
     /**
      n=19
