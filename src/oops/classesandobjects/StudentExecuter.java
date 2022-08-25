@@ -7,6 +7,11 @@ public class StudentExecuter {
         Student s3 = new Student("Neha", 11);
         Student s4 = new Student();
 
+        s1.getName();
+        s2.getRollNumber();
+
+        s1.setName("Kartik");
+
 
         // Give error as below fields are private
         //        System.out.println(s1.name);
