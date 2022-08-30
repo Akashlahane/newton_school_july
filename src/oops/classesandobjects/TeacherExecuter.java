@@ -1,5 +1,7 @@
 package oops.classesandobjects;
 
+import java.util.Scanner;
+
 public class TeacherExecuter {
 
     public static void main(String[] args) {
