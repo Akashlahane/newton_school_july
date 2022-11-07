@@ -1,5 +1,8 @@
 package advanceddsa.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeExample {
 
     /**
@@ -47,6 +50,30 @@ public class TreeExample {
         inOrder(root.right);
     }
 
+    static void levelOrder(TreeNode root){
+        if(root==null){
+            return;
+        }
+
+        Queue<TreeNode> q = new LinkedList();
+        q.offer(root);
+
+        while(!q.isEmpty()){
+            TreeNode n = q.poll();
+
+            System.out.print(n.data+" ");
+
+            if(n.left!=null){
+                q.offer(n.left);
+            }
+
+            if(n.right!=null){
+                q.offer(n.right);
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         TreeNode root = buildTree();
         preOrder(root);
@@ -54,16 +81,7 @@ public class TreeExample {
         inOrder(root);
         System.out.println();
         postOrder(root);
-    }
-}
-
-class TreeNode{
-    int data;
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode(int data){
-        this.data = data;
-        left = right= null;
+        System.out.println();
+        levelOrder(root);
     }
 }
