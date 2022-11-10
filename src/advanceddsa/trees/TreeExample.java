@@ -74,6 +74,12 @@ public class TreeExample {
 
     }
 
+    static int height(TreeNode root){
+        return root==null?0: 1 + Math.max(
+                height(root.left),
+                height(root.right));
+    }
+
     public static void main(String[] args) {
         TreeNode root = buildTree();
         preOrder(root);
